@@ -1,0 +1,11 @@
+html, body { margin: 0; height: 100%; background: #000; overflow: hidden; }
+body { touch-action: none; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
+#game { display: block; width: 100vw; height: 100vh; }
+#rotate { display: none; position: fixed; left: 0; right: 0; bottom: 12px; text-align: center;
+  color: #c8d0ff; font: 700 14px system-ui, sans-serif; pointer-events: none; }
+body.portrait #rotate { display: block; }
+#debug { position: fixed; right: 0; top: 0; max-height: 100vh; overflow: auto; width: 300px;
+  background: rgba(0,0,0,0.8); color: #ddd; font: 11px ui-monospace, monospace; padding: 6px; }
+#debug label { display: grid; grid-template-columns: 120px 1fr 44px; gap: 4px; align-items: center; }
+#debug input { width: 100%; }
+#debug button { margin-left: 4px; font-size: 11px; }

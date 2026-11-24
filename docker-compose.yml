@@ -1,0 +1,14 @@
+services:
+  web:
+    image: node:22-alpine
+    working_dir: /app
+    # npm ci は package-lock.json を書き換えない。lock が変わったときだけ入れ直す
+    command: sh -c "cmp -s package-lock.json node_modules/.lock-copy || (npm ci && cp package-lock.json node_modules/.lock-copy); npm run dev"
+    ports:
+      - "5174:5173"
+    volumes:
+      - ./:/app
+      - node_modules:/app/node_modules
+
+volumes:
+  node_modules:
